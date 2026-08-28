@@ -1,0 +1,97 @@
+product_id,product_name,category,subcategory,unit_cost,selling_price
+P0001,NOVA Sneakers 001,Footwear,Sneakers,633.72,1189.84
+P0002,NOVA Sneakers 002,Footwear,Sneakers,427.21,916.55
+P0003,NOVA Sneakers 003,Footwear,Sneakers,1404.03,2484.65
+P0004,NOVA Sneakers 004,Footwear,Sneakers,2430.81,5689.55
+P0005,NOVA Sneakers 005,Footwear,Sneakers,2396.23,3884.22
+P0006,NOVA Sneakers 006,Footwear,Sneakers,1902.85,4462.91
+P0007,NOVA Sneakers 007,Footwear,Sneakers,1555.91,2511.49
+P0008,NOVA Sneakers 008,Footwear,Sneakers,2099.19,4785.98
+P0009,NOVA Running Shoes 009,Footwear,Running Shoes,1847.12,3128.2
+P0010,NOVA Running Shoes 010,Footwear,Running Shoes,719.53,1456.52
+P0011,NOVA Running Shoes 011,Footwear,Running Shoes,1362.16,2818.01
+P0012,NOVA Running Shoes 012,Footwear,Running Shoes,545.74,838.21
+P0013,NOVA Running Shoes 013,Footwear,Running Shoes,1098.36,1821.92
+P0014,NOVA Running Shoes 014,Footwear,Running Shoes,1662.54,2938.61
+P0015,NOVA Running Shoes 015,Footwear,Running Shoes,1804.74,3914.12
+P0016,NOVA Running Shoes 016,Footwear,Running Shoes,711.77,1651.18
+P0017,NOVA Casual Shoes 017,Footwear,Casual Shoes,2031.75,4117.91
+P0018,NOVA Casual Shoes 018,Footwear,Casual Shoes,2299.64,3830.9
+P0019,NOVA Casual Shoes 019,Footwear,Casual Shoes,1227.77,1824.2
+P0020,NOVA Casual Shoes 020,Footwear,Casual Shoes,1303.6,2485.18
+P0021,NOVA Casual Shoes 021,Footwear,Casual Shoes,1655.35,2423.5
+P0022,NOVA Casual Shoes 022,Footwear,Casual Shoes,371.43,675.96
+P0023,NOVA Casual Shoes 023,Footwear,Casual Shoes,716.09,1545.89
+P0024,NOVA Casual Shoes 024,Footwear,Casual Shoes,1771.22,3056.82
+P0025,NOVA T-Shirts 025,Apparel,T-Shirts,400.72,634.12
+P0026,NOVA T-Shirts 026,Apparel,T-Shirts,1821.69,4354.14
+P0027,NOVA T-Shirts 027,Apparel,T-Shirts,1018.21,2242.09
+P0028,NOVA T-Shirts 028,Apparel,T-Shirts,2207.61,3197.02
+P0029,NOVA T-Shirts 029,Apparel,T-Shirts,2315.69,4321.55
+P0030,NOVA T-Shirts 030,Apparel,T-Shirts,2421.33,4693.88
+P0031,NOVA T-Shirts 031,Apparel,T-Shirts,817.32,1940.86
+P0032,NOVA T-Shirts 032,Apparel,T-Shirts,835.27,1906.49
+P0033,NOVA Hoodies 033,Apparel,Hoodies,680.88,1412.67
+P0034,NOVA Hoodies 034,Apparel,Hoodies,1204.84,2857.9
+P0035,NOVA Hoodies 035,Apparel,Hoodies,706.5,1277.91
+P0036,NOVA Hoodies 036,Apparel,Hoodies,1707.51,4059.81
+P0037,NOVA Hoodies 037,Apparel,Hoodies,968.5,1740.27
+P0038,NOVA Hoodies 038,Apparel,Hoodies,1315.94,2174.85
+P0039,NOVA Hoodies 039,Apparel,Hoodies,2098.18,3130.48
+P0040,NOVA Hoodies 040,Apparel,Hoodies,1850.54,3578.81
+P0041,NOVA Jackets 041,Apparel,Jackets,832.24,1575.29
+P0042,NOVA Jackets 042,Apparel,Jackets,2125.89,3923.21
+P0043,NOVA Jackets 043,Apparel,Jackets,568.18,818.63
+P0044,NOVA Jackets 044,Apparel,Jackets,2011.15,3480.16
+P0045,NOVA Jackets 045,Apparel,Jackets,2348.74,4737.75
+P0046,NOVA Jackets 046,Apparel,Jackets,1259.82,2474.87
+P0047,NOVA Jackets 047,Apparel,Jackets,1305.69,3010.67
+P0048,NOVA Jackets 048,Apparel,Jackets,1307.65,1966.79
+P0049,NOVA Backpacks 049,Accessories,Backpacks,1613.59,3264.26
+P0050,NOVA Backpacks 050,Accessories,Backpacks,1983.73,4628.61
+P0051,NOVA Backpacks 051,Accessories,Backpacks,1274.78,2233.51
+P0052,NOVA Backpacks 052,Accessories,Backpacks,1379.7,3173.58
+P0053,NOVA Backpacks 053,Accessories,Backpacks,2455.96,5823.66
+P0054,NOVA Backpacks 054,Accessories,Backpacks,805.33,1527.63
+P0055,NOVA Backpacks 055,Accessories,Backpacks,870.84,1539.63
+P0056,NOVA Backpacks 056,Accessories,Backpacks,369.71,576.97
+P0057,NOVA Caps 057,Accessories,Caps,1173.57,2071.0
+P0058,NOVA Caps 058,Accessories,Caps,913.43,1489.17
+P0059,NOVA Caps 059,Accessories,Caps,1947.7,3300.47
+P0060,NOVA Caps 060,Accessories,Caps,1854.4,3279.74
+P0061,NOVA Caps 061,Accessories,Caps,2064.35,3235.32
+P0062,NOVA Caps 062,Accessories,Caps,646.73,1344.99
+P0063,NOVA Caps 063,Accessories,Caps,2312.81,3568.64
+P0064,NOVA Caps 064,Accessories,Caps,462.15,1078.95
+P0065,NOVA Wallets 065,Accessories,Wallets,558.12,921.1
+P0066,NOVA Wallets 066,Accessories,Wallets,2344.89,5165.6
+P0067,NOVA Wallets 067,Accessories,Wallets,1054.07,2481.84
+P0068,NOVA Wallets 068,Accessories,Wallets,1549.71,2281.56
+P0069,NOVA Wallets 069,Accessories,Wallets,1846.75,3577.67
+P0070,NOVA Wallets 070,Accessories,Wallets,1559.69,3734.06
+P0071,NOVA Wallets 071,Accessories,Wallets,635.53,1307.16
+P0072,NOVA Wallets 072,Accessories,Wallets,1309.23,2188.89
+P0073,NOVA Water Bottles 073,Lifestyle,Water Bottles,1825.8,3776.14
+P0074,NOVA Water Bottles 074,Lifestyle,Water Bottles,2184.29,4977.71
+P0075,NOVA Water Bottles 075,Lifestyle,Water Bottles,1536.0,2650.48
+P0076,NOVA Water Bottles 076,Lifestyle,Water Bottles,1465.08,2577.45
+P0077,NOVA Water Bottles 077,Lifestyle,Water Bottles,910.18,1776.28
+P0078,NOVA Water Bottles 078,Lifestyle,Water Bottles,1747.46,3478.44
+P0079,NOVA Water Bottles 079,Lifestyle,Water Bottles,2399.72,4076.25
+P0080,NOVA Water Bottles 080,Lifestyle,Water Bottles,1119.15,2314.0
+P0081,NOVA Sunglasses 081,Lifestyle,Sunglasses,1620.79,2272.13
+P0082,NOVA Sunglasses 082,Lifestyle,Sunglasses,987.03,1632.31
+P0083,NOVA Sunglasses 083,Lifestyle,Sunglasses,2147.81,4867.47
+P0084,NOVA Sunglasses 084,Lifestyle,Sunglasses,924.56,1388.75
+P0085,NOVA Sunglasses 085,Lifestyle,Sunglasses,751.44,1184.7
+P0086,NOVA Sunglasses 086,Lifestyle,Sunglasses,822.36,1344.27
+P0087,NOVA Sunglasses 087,Lifestyle,Sunglasses,1355.65,2331.23
+P0088,NOVA Sunglasses 088,Lifestyle,Sunglasses,1531.61,2671.33
+P0089,NOVA Watches 089,Lifestyle,Watches,2092.29,4918.54
+P0090,NOVA Watches 090,Lifestyle,Watches,1188.62,1722.87
+P0091,NOVA Watches 091,Lifestyle,Watches,827.07,1242.14
+P0092,NOVA Watches 092,Lifestyle,Watches,1058.48,2164.71
+P0093,NOVA Watches 093,Lifestyle,Watches,1441.6,2368.37
+P0094,NOVA Watches 094,Lifestyle,Watches,1987.97,3044.54
+P0095,NOVA Watches 095,Lifestyle,Watches,802.03,1665.05
+P0096,NOVA Watches 096,Lifestyle,Watches,733.92,1525.65

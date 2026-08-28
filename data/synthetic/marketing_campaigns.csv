@@ -1,0 +1,51 @@
+campaign_id,campaign_name,channel,campaign_type,start_date,end_date,budget,target_segment
+CAM001,Festival Rush 1,Instagram,Acquisition,2025-04-12,2025-04-26,114538.42,Budget
+CAM002,Weekend Essentials 2,YouTube,Retention,2025-12-19,2025-12-29,483139.82,Returning Customers
+CAM003,Summer Sale 3,Google,Retention,2026-07-26,2026-08-13,462368.77,Returning Customers
+CAM004,Back to College 4,Google,Acquisition,2025-09-14,2025-10-05,208374.75,Regular
+CAM005,Festival Rush 5,YouTube,Product,2025-11-14,2025-12-05,264034.91,All Customers
+CAM006,New Season 6,Email,Product,2025-03-05,2025-03-26,310064.69,Regular
+CAM007,Summer Sale 7,Email,Retention,2026-06-16,2026-06-26,459193.28,Returning Customers
+CAM008,Monsoon Revival 8,Google,Acquisition,2025-01-01,2025-01-18,459323.61,Budget
+CAM009,Flash Sale 9,Email,Product,2026-06-12,2026-06-21,345795.56,Regular
+CAM010,Mega Savings 10,Google,Acquisition,2025-07-11,2025-07-25,176614.52,Regular
+CAM011,Flash Sale 11,Email,Retention,2026-07-31,2026-08-10,186431.43,Returning Customers
+CAM012,New Season 12,Google,Acquisition,2025-11-15,2025-11-22,310753.3,Regular
+CAM013,Summer Sale 13,Google,Retention,2026-02-09,2026-02-22,392649.5,Returning Customers
+CAM014,Premium Collection 14,Facebook,Acquisition,2026-04-21,2026-05-07,415586.93,New Customers
+CAM015,Mega Savings 15,Email,Retention,2025-09-04,2025-09-13,174491.56,Premium
+CAM016,New Season 16,Facebook,Acquisition,2025-04-03,2025-04-12,382263.43,New Customers
+CAM017,Flash Sale 17,Email,Acquisition,2025-07-26,2025-08-04,127988.02,Budget
+CAM018,Summer Sale 18,Google,Acquisition,2025-11-22,2025-12-08,259512.16,Regular
+CAM019,Weekend Essentials 19,Instagram,Acquisition,2025-02-24,2025-03-08,222227.99,Budget
+CAM020,Weekend Essentials 20,Instagram,Acquisition,2025-09-22,2025-10-04,370350.58,New Customers
+CAM021,Summer Sale 21,Facebook,Acquisition,2026-03-15,2026-03-27,144830.61,New Customers
+CAM022,Festival Rush 22,Google,Acquisition,2025-06-07,2025-06-21,195429.04,Budget
+CAM023,Flash Sale 23,Google,Retention,2025-02-01,2025-02-11,260964.9,VIP
+CAM024,NOVA Spotlight 24,Instagram,Acquisition,2026-01-03,2026-01-18,149364.73,New Customers
+CAM025,Premium Collection 25,Email,Product,2026-03-31,2026-04-08,358765.11,All Customers
+CAM026,Back to College 26,Facebook,Product,2026-05-08,2026-05-29,308206.33,All Customers
+CAM027,Monsoon Revival 27,YouTube,Product,2025-01-08,2025-01-22,477880.32,Regular
+CAM028,Mega Savings 28,Email,Retention,2026-01-12,2026-01-26,425251.36,Returning Customers
+CAM029,Premium Collection 29,Google,Retention,2025-06-02,2025-06-14,354187.07,Returning Customers
+CAM030,Weekend Essentials 30,Instagram,Product,2025-01-17,2025-02-05,193690.04,Premium
+CAM031,New Season 31,Email,Retention,2025-09-10,2025-09-27,450370.47,VIP
+CAM032,Weekend Essentials 32,YouTube,Product,2025-02-19,2025-03-04,222294.51,Premium
+CAM033,Summer Sale 33,Facebook,Product,2025-02-13,2025-02-24,90914.56,Regular
+CAM034,New Season 34,Google,Product,2025-04-23,2025-05-11,243280.32,All Customers
+CAM035,New Season 35,Instagram,Retention,2025-07-22,2025-08-01,287671.1,VIP
+CAM036,Summer Sale 36,Google,Acquisition,2025-05-09,2025-05-30,197686.42,Budget
+CAM037,NOVA Spotlight 37,Google,Acquisition,2025-10-21,2025-10-28,256116.81,Regular
+CAM038,Summer Sale 38,Google,Acquisition,2026-01-17,2026-02-02,109185.07,Regular
+CAM039,Back to College 39,Influencer,Acquisition,2025-06-28,2025-07-16,434810.42,Regular
+CAM040,New Season 40,Instagram,Product,2026-06-11,2026-06-28,156086.02,Premium
+CAM041,Premium Collection 41,Google,Product,2025-04-11,2025-04-28,379449.0,All Customers
+CAM042,Flash Sale 42,Instagram,Acquisition,2026-01-24,2026-02-09,99085.44,Budget
+CAM043,New Season 43,YouTube,Product,2025-10-14,2025-10-30,199210.69,Regular
+CAM044,NOVA Spotlight 44,Facebook,Acquisition,2025-04-23,2025-05-12,459572.93,Budget
+CAM045,Mega Savings 45,Facebook,Retention,2025-07-26,2025-08-03,80446.07,VIP
+CAM046,Monsoon Revival 46,Instagram,Retention,2025-04-21,2025-05-05,189381.1,Returning Customers
+CAM047,Festival Rush 47,Google,Acquisition,2025-01-25,2025-02-09,57772.04,New Customers
+CAM048,Weekend Essentials 48,Influencer,Retention,2025-04-30,2025-05-19,58694.74,Premium
+CAM049,Festival Rush 49,Google,Retention,2025-08-27,2025-09-07,413433.5,Premium
+CAM050,Premium Collection 50,Instagram,Retention,2025-08-05,2025-08-15,171735.31,Premium
