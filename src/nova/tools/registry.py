@@ -7,6 +7,7 @@ from nova.tools.marketing_tools import (
     worst_campaigns,
     performance_by_channel,
     performance_by_campaign_type,
+    marketing_summary
 )
 
 from nova.tools.sales_tools import (
@@ -21,6 +22,7 @@ from nova.tools.sales_tools import (
     orders_by_month,
     repeat_customer_rate,
     customer_lifetime_value,
+    sales_summary
 )
 from nova.tools.finance_tools import (
     total_revenue,
@@ -31,6 +33,7 @@ from nova.tools.finance_tools import (
     monthly_profit,
     expense_breakdown,
     financial_summary,
+    finance_summary
 )
 
 from nova.tools.inventory_tools import (
@@ -62,6 +65,7 @@ MARKETING_TOOLS = [
     worst_campaigns,
     performance_by_channel,
     performance_by_campaign_type,
+    marketing_summary
 ]
 
 SALES_TOOLS = [
@@ -76,6 +80,7 @@ SALES_TOOLS = [
     orders_by_month,
     repeat_customer_rate,
     customer_lifetime_value,
+    sales_summary
 ]
 
 FINANCE_TOOLS = [
@@ -87,4 +92,5 @@ FINANCE_TOOLS = [
     monthly_profit,
     expense_breakdown,
     financial_summary,
+    finance_summary
 ]

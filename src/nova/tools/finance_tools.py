@@ -8,6 +8,7 @@ from nova.analytics.finance import (
     get_expense_breakdown,
     get_financial_summary,
 )
+from nova.tools.finance_summary import finance_summary
 
 
 def total_revenue():

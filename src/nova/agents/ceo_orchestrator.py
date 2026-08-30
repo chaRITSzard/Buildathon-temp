@@ -1,37 +1,9 @@
-from nova.agents.base_agent import BaseAgent
+from nova.llm.client import completion_with_fallback
 
-from nova.agents.sales_agent import sales_agent
-from nova.agents.marketing_agent import marketing_agent
-from nova.agents.finance_agent import finance_agent
-from nova.agents.inventory_agent import inventory_agent
-
-
-def consult_sales(question: str) -> str:
-    """Consult the Sales Agent for revenue, customers, products, orders, segments, categories, cities, and sales trends."""
-    return sales_agent.run(question)
-
-
-def consult_marketing(question: str) -> str:
-    """Consult the Marketing Agent for campaigns, channels, marketing spend, ROAS, ROI, conversions, and marketing performance."""
-    return marketing_agent.run(question)
-
-
-def consult_finance(question: str) -> str:
-    """Consult the Finance Agent for revenue, expenses, gross profit, operating profit, margins, costs, and financial health."""
-    return finance_agent.run(question)
-
-
-def consult_inventory(question: str) -> str:
-    """Consult the Inventory Agent for stock levels, low-stock products, out-of-stock products, fast-moving products, and inventory turnover."""
-    return inventory_agent.run(question)
-
-
-CEO_TOOLS = [
-    consult_sales,
-    consult_marketing,
-    consult_finance,
-    consult_inventory,
-]
+from nova.tools.sales_summary import sales_summary
+from nova.tools.marketing_summary import marketing_summary
+from nova.tools.finance_summary import finance_summary
+from nova.tools.inventory_tools import inventory_summary
 
 
 CEO_SYSTEM_PROMPT = """
@@ -39,47 +11,32 @@ You are NOVA's CEO Intelligence Orchestrator.
 
 You are the strategic decision-making layer of NOVA.
 
-You have access to four specialist business intelligence agents:
+You have been provided with structured data from four business
+departments:
 
-- Sales Agent
-- Marketing Agent
-- Finance Agent
-- Inventory Agent
+- Sales
+- Marketing
+- Finance
+- Inventory
 
-Your job is to determine which specialists are relevant to
-the CEO's question, consult them, and synthesize their findings
-into one executive-level answer.
+Your job is to analyze all four datasets together and produce
+one executive-level recommendation.
 
-DELEGATION RULES:
+IMPORTANT RULES:
 
-1. Decide which specialists are necessary based on the actual
-   business question.
-2. You may consult multiple specialists.
-3. Do not consult a specialist merely because its department
-   name appears in the question.
-4. For strategic questions involving growth, expansion,
-   major spending, or operational changes, consider whether
-   multiple departments are required.
-5. Use specialist results as the source of business evidence.
-6. Never invent metrics.
-7. Never claim that a specialist provided evidence that it
-   did not actually provide.
-8. Distinguish facts from interpretations and recommendations.
-9. Look for dependencies between departments.
-10. If the available evidence is insufficient to answer
-    confidently, say so.
-11. If specialists disagree, explicitly identify the conflict.
-12. Do not hide uncertainty.
-13. Recommendations should consider the company's overall
-    business position rather than optimizing one department
-    in isolation.
-
-IMPORTANT:
-
-A specialist's recommendation is not automatically a fact.
-
-Treat specialist output as analysis that must be evaluated
-in the broader business context.
+1. Use ONLY the data provided in the department summaries.
+2. Never invent metrics or facts.
+3. Do not claim that an agent said something that is not present
+   in the provided data.
+4. Distinguish facts from interpretations and recommendations.
+5. Look for dependencies between departments.
+6. Consider the company's overall position rather than
+   optimizing one department in isolation.
+7. If the evidence is insufficient, explicitly say so.
+8. Do not hide uncertainty.
+9. If there are conflicting signals between departments,
+   explicitly identify them.
+10. Recommendations must be supported by the available data.
 
 FINAL RESPONSE FORMAT:
 
@@ -87,8 +44,8 @@ FINAL RESPONSE FORMAT:
 Give the overall conclusion.
 
 ### Cross-Department Evidence
-Summarize the most important findings from the specialists
-you consulted.
+Summarize the most important findings from Sales, Marketing,
+Finance, and Inventory.
 
 ### Strategic Recommendation
 Give the most important action the CEO should consider.
@@ -101,20 +58,61 @@ State High, Medium, or Low confidence and briefly explain why.
 """
 
 
-ceo_agent = BaseAgent(
-    name="CEO Orchestrator",
-    system_prompt=CEO_SYSTEM_PROMPT,
-    tools=CEO_TOOLS,
-)
+def ceo_analysis(question: str) -> str:
+
+    # Collect structured data directly from the analytics tools.
+    # No specialist LLM calls are made here.
+
+    sales_data = sales_summary()
+    marketing_data = marketing_summary()
+    finance_data = finance_summary()
+    inventory_data = inventory_summary()
+
+    department_data = {
+        "sales": sales_data,
+        "marketing": marketing_data,
+        "finance": finance_data,
+        "inventory": inventory_data,
+    }
+
+    messages = [
+        {
+            "role": "system",
+            "content": CEO_SYSTEM_PROMPT
+        },
+        {
+            "role": "user",
+            "content": (
+                f"CEO QUESTION:\n{question}\n\n"
+                "DEPARTMENT DATA:\n"
+                f"{department_data}\n\n"
+                "Analyze the department data and provide the "
+                "executive response using the required format."
+            )
+        }
+    ]
+
+    response = completion_with_fallback(
+        messages=messages
+    )
+
+    content = response.choices[0].message.content
+
+    if content is None:
+        raise ValueError("CEO LLM returned no content.")
+
+    return content
 
 
 if __name__ == "__main__":
 
     question = (
-        "Can NOVA safely accelerate growth right now?"
+        "Should NOVA aggressively scale the business right now? "
+        "Analyze sales, marketing, finance, and inventory before "
+        "making an executive recommendation."
     )
 
-    answer = ceo_agent.run(question)
+    answer = ceo_analysis(question)
 
     print("\nCEO ORCHESTRATOR\n")
     print(answer)

@@ -11,7 +11,7 @@ from nova.analytics.sales import (
     get_repeat_customer_rate,
     get_customer_lifetime_value,
 )
-
+from nova.tools.sales_summary import sales_summary
 
 def total_revenue():
     """Return total company revenue from completed sales."""

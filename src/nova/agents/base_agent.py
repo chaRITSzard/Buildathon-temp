@@ -1,9 +1,7 @@
 import json
 import inspect
 
-from litellm import completion
-
-from nova.llm.client import LLM_MODEL, LLM_API_KEY
+from nova.llm.client import completion_with_fallback
 
 
 class BaseAgent:
@@ -39,9 +37,7 @@ class BaseAgent:
 
             properties[name] = {
                 "type": "string",
-                "description": (
-                    f"Argument for {name}."
-                )
+                "description": f"Argument for {name}."
             }
 
             if parameter.default is inspect.Parameter.empty:
@@ -62,6 +58,7 @@ class BaseAgent:
                 }
             }
         }
+
     def run(self, question: str):
 
         messages = [
@@ -77,22 +74,49 @@ class BaseAgent:
 
         while True:
 
-            response = completion(
-                model=LLM_MODEL,
-                api_key=LLM_API_KEY,
+            print(f"\n===== {self.name} LLM CALL =====")
+            print(
+                "TOOLS:",
+                [
+                    tool["function"]["name"]
+                    for tool in self.tool_schemas
+                ]
+            )
+            print("================================")
+
+            response = completion_with_fallback(
                 messages=messages,
-                tools=self.tool_schemas,
-                tool_choice="auto"
+                tools=self.tool_schemas
             )
 
             message = response.choices[0].message
 
-            if not message.tool_calls:
-                return message.content
+            tool_calls = (
+                getattr(message, "tool_calls", None)
+                or []
+            )
 
-            messages.append(message)
+            if not tool_calls:
+                return message.content or ""
 
-            for tool_call in message.tool_calls:
+            assistant_message = {
+                "role": message.role,
+                "content": message.content or "",
+                "tool_calls": [
+                    (
+                        tool_call.model_dump(
+                            exclude_none=True
+                        )
+                        if hasattr(tool_call, "model_dump")
+                        else tool_call
+                    )
+                    for tool_call in tool_calls
+                ]
+            }
+
+            messages.append(assistant_message)
+
+            for tool_call in tool_calls:
 
                 tool_name = tool_call.function.name
 
@@ -108,14 +132,21 @@ class BaseAgent:
                         f"Unknown tool requested: {tool_name}"
                     )
 
-                result = tool(**arguments)
+                if inspect.signature(tool).parameters:
+                    result = tool(**arguments)
+                else:
+                    result = tool()
+
+                print(
+                    f"\n===== {self.name} TOOL RESULT ====="
+                )
+                print("TOOL:", tool_name)
+                print("RESULT TYPE:", type(result).__name__)
+                print("===================================")
 
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tool_call.id,
                     "name": tool_name,
-                    "content": json.dumps(
-                        result,
-                        default=str
-                    )
+                    "content": str(result)
                 })

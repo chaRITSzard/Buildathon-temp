@@ -52,5 +52,27 @@ def inventory_turnover():
 
 
 def inventory_summary():
-    """Return the overall inventory summary including total stock, low-stock products, out-of-stock products, and inventory turnover."""
-    return get_inventory_summary()
+
+    """
+    Return a comprehensive inventory summary for strategic analysis,
+    including total stock, low-stock products, out-of-stock products,
+    fast-moving products, and inventory turnover.
+    """
+
+    return {
+        "total_stock": get_total_stock(),
+
+        "low_stock_products": get_low_stock_products().to_dict(
+            orient="records"
+        ),
+
+        "out_of_stock_products": get_out_of_stock_products().to_dict(
+            orient="records"
+        ),
+
+        "fast_moving_products": get_fast_moving_products().to_dict(
+            orient="records"
+        ),
+
+        "inventory_turnover": get_inventory_turnover(),
+    }

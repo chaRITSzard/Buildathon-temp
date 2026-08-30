@@ -8,6 +8,7 @@ from nova.analytics.marketing import (
     get_performance_by_channel,
     get_performance_by_campaign_type,
 )
+from nova.tools.marketing_summary import marketing_summary
 
 
 def total_marketing_spend():

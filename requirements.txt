@@ -5,3 +5,5 @@ langgraph
 litellm
 pydantic
 python-dotenv
+fastapi
+uvicorn

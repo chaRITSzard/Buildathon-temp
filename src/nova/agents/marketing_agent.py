@@ -1,5 +1,6 @@
 from nova.agents.base_agent import BaseAgent
 from nova.tools.registry import MARKETING_TOOLS
+from nova.tools.marketing_summary import marketing_summary
 
 
 MARKETING_SYSTEM_PROMPT = """
