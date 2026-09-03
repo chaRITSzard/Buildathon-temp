@@ -4,6 +4,7 @@
 
 __pycache__/
 *.py[cod]
+*.pyc
 *$py.class
 *.so
 
@@ -12,6 +13,7 @@ __pycache__/
 venv/
 env/
 ENV/
+node_modules/
 
 # Python packaging
 build/
