@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://127.0.0.1:8000'
+const API_BASE_URL = 'https://nova-buildathon.onrender.com'
+
 
 export async function askNova(question) {
   const response = await fetch(
@@ -25,6 +26,7 @@ export async function askNova(question) {
   return data
 }
 
+
 export async function decideNova(payload) {
   const response = await fetch(
     `${API_BASE_URL}/decision`,
@@ -47,6 +49,7 @@ export async function decideNova(payload) {
 
   return data
 }
+
 
 export async function getActions() {
   const response = await fetch(
