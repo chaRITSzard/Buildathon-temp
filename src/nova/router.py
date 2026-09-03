@@ -4,32 +4,12 @@ from nova.agents.finance_agent import finance_agent
 from nova.agents.inventory_agent import inventory_agent
 from nova.agents.ceo_orchestrator import ceo_analysis
 
-
 def route_question(question: str) -> str:
     """
     Determine which NOVA agent should handle a question.
     """
 
     text = question.lower()
-
-    # Strategic / cross-department questions
-    strategic_keywords = [
-        "should we",
-        "should nova",
-        "scale",
-        "scaling",
-        "expand",
-        "expansion",
-        "growth strategy",
-        "business strategy",
-        "overall business",
-        "company performance",
-        "executive",
-        "ceo",
-    ]
-
-    if any(keyword in text for keyword in strategic_keywords):
-        return "ceo"
 
     # Marketing
     marketing_keywords = [
@@ -46,6 +26,9 @@ def route_question(question: str) -> str:
         "conversions",
         "channel",
         "channels",
+        "budget",
+        "reallocate",
+        "reallocation",
     ]
 
     if any(keyword in text for keyword in marketing_keywords):
@@ -72,49 +55,67 @@ def route_question(question: str) -> str:
 
     # Finance
     finance_keywords = [
-    "finance",
-    "financial",
-    "profit",
-    "profitability",
-    "expense",
-    "expenses",
-    "cost",
-    "costs",
-    "margin",
-    "margins",
-    "gross profit",
-    "operating profit",
-    "cash",
-]
+        "finance",
+        "financial",
+        "profit",
+        "profitability",
+        "expense",
+        "expenses",
+        "cost",
+        "costs",
+        "margin",
+        "margins",
+        "gross profit",
+        "operating profit",
+        "cash",
+    ]
 
     if any(keyword in text for keyword in finance_keywords):
         return "finance"
 
     # Sales
     sales_keywords = [
-    "sales",
-    "revenue",
-    "customer",
-    "customers",
-    "product",
-    "products",
-    "orders",
-    "order",
-    "segment",
-    "segments",
-    "units sold",
-    "aov",
-    "average order",
-    "lifetime value",
-    "ltv",
-]
+        "sales",
+        "revenue",
+        "customer",
+        "customers",
+        "product",
+        "products",
+        "orders",
+        "order",
+        "segment",
+        "segments",
+        "units sold",
+        "aov",
+        "average order",
+        "lifetime value",
+        "ltv",
+    ]
 
     if any(keyword in text for keyword in sales_keywords):
         return "sales"
 
+    # Strategic / cross-department questions
+    strategic_keywords = [
+        "should we",
+        "should nova",
+        "scale",
+        "scaling",
+        "expand",
+        "expansion",
+        "growth strategy",
+        "business strategy",
+        "overall business",
+        "company performance",
+        "executive",
+        "ceo",
+    ]
+
+    if any(keyword in text for keyword in strategic_keywords):
+        return "ceo"
+
     # Default to CEO for ambiguous questions
     return "ceo"
-
 
 def route_and_run(question: str) -> tuple[str, str]:
     agent_name = route_question(question)
@@ -132,23 +133,6 @@ def route_and_run(question: str) -> tuple[str, str]:
         return agent_name, inventory_agent.run(question)
 
     if agent_name == "ceo":
-        return agent_name, ceo_analysis.run(question)
+        return agent_name, ceo_analysis(question)
 
     raise ValueError(f"Unknown route: {agent_name}")
-
-if __name__ == "__main__":
-
-    tests = [
-        "What is our ROAS?",
-        "Which products are low stock?",
-        "What is our operating profit?",
-        "Which customer segment generates the most revenue?",
-        "Should NOVA aggressively scale the business?",
-        "Should we increase marketing spend?",
-    ]
-
-    for question in tests:
-        print(
-            f"{question}\n"
-            f"→ {route_question(question)}\n"
-        )

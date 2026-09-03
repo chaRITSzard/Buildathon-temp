@@ -16,7 +16,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-DEFAULT_MAX_TOKENS = 4096
+DEFAULT_MAX_TOKENS = 2048
 
 
 class LLMConfigurationError(ValueError):
